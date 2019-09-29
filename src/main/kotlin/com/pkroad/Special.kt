@@ -35,3 +35,21 @@ fun String.firstChar():String{
 fun testNUll(name:String?):Int{
     return name?.length?:-1
 }
+
+interface Generator<in K,out T>{
+    fun next():T
+    fun add(item:K)
+}
+
+var p = object : Generator<String,Int> {
+
+    override fun next(): Int {
+        return 0;
+    }
+
+    override fun add(item: String) {
+
+    }
+
+}
+
